@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: `https://github.com/marlon20m`,
     description: `I am a Full Stack Web Developer currently enrolled at The University of Texas`,
     hero: {
-      heading: `My name is Marlon Mora I am a Full Stack Web Developer`,
+      heading: `My name is Marlon Mora & I am a Full Stack Web Developer`,
       maxWidth: 652,
     },
     social: [
@@ -63,4 +63,4 @@ module.exports = {
       },
     },
   ],
-};
+}
