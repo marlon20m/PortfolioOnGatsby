@@ -7,6 +7,80 @@ excerpt: Work Day Scheduler is a website I created to moniter the 9 to 5 work da
               the day. Work day Scheduler is a responsive approach to store your events throughout the day and create
               new events on the following days.
 ---
-## Triggered
+## Triggered (in progress)
+
+[GitHub Repository](https://github.com/Project-trigger/project-2)     
+[Heroku](https://project2-triggered.herokuapp.com/)
 
 Triggered takes one of the most beloved features on every social media app and brings it to the limelight by focusing on the users need to comment on different topics from their own point of view. Triggered lets you create hot topics and also debate with other user opinions. These debates can de decided by mediators overseeing these conversations through our voting system. Triggered is a fun way to decide on topics in an online enviornment.
+
+This project creates a connection to the backend using MySQL to create our database on the server to store input from the frontend using React. We have also implemented the use of Auth0 which safeguarded our authorization features while creating a username from google accounts to connect with existing data on the backend sever. 
+The following is important code used to connect all these features together by including useState and useEffect.
+
+```js
+import React, { useState, useEffect } from "react";
+import Post from "../../components/Post";
+import API from "../../utils/api";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
+const NewPost = () => {
+  const { user } = useAuth0();
+  const { picture, email, username } = user;
+
+  const [state, setState] = useState({
+    topic: "",
+    arguement: "",
+    counterArguement: ""
+  })
+
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    setState({
+      ...state,
+      [name]: value
+    })
+    console.log(value);
+  }
+
+  const handleSave = event => {
+    console.log(state, user)
+    const newdebates = {
+      topic: state.topic,
+      incumbent_body: state.arguement,
+      challenger_body: state.counterArguement,
+      username: user.name,
+      email: user.email
+    }
+    API.newdebates(newdebates)
+  }
+  useEffect(() => {
+    API.newdebates()
+      .then((res, req) => {
+        console.log(res)
+      })
+
+  }, []
+  )
+
+  return (
+    <div className="form">
+      <header className="appHeader">
+        <h1>Triggered</h1>
+      </header>
+
+      <div>
+        <form>
+          <Post handleInputChange={handleInputChange} topic={state.topic} arguement={state.arguement} counterArguement={state.counterArguement} />
+        </form>
+      </div>
+
+      <div className="submitBt">
+        <input onClick={handleSave} type="submit" name="Submit" style={{ justifyContent: "center" }} />
+      </div>
+    </div>
+  );
+};
+
+export default NewPost;
+```

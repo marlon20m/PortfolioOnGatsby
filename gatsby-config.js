@@ -10,16 +10,8 @@ module.exports = {
     },
     social: [
       {
-        name: `twitter`,
-        url: `https://twitter.com/narative`,
-      },
-      {
         name: `github`,
         url: `https://github.com/marlon20m`,
-      },
-      {
-        name: `instagram`,
-        url: `https://instagram.com/narative.co`,
       },
       {
         name: `linkedin`,

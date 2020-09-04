@@ -7,7 +7,75 @@ excerpt: FoodTruckATX is a project organized to create a dedicated Food Truck re
               We used the Yelp Fusion API to target food truck data while also implementing the Google Maps and
               Directions API to create a transportation expirience to get to each food truck.
 ---
+## FoodTrucksATX
 
-FoodTruckATX is a project organized to create a dedicated Food Truck resource for the Austin city area.
+[GitHub Repository](https://github.com/DestinATX/Project-1)     
+[Github Pages](https://destinatx.github.io/Project-1)
+
+
+FoodTrucksATX is a project organized to create a dedicated Food Truck resource for the Austin city area.
 We used the Yelp Fusion API to target food truck data while also implementing the Google Maps and Directions API to create a transportation expirience to get to each food truck.
 
+The following code was used to create a connection between geolocation in the Google Maps API and the Yelp Fusion API food truck data and then rendering this data based on location to the app based on travel options in the Directions API with Yelp ratings, addresses, and cuisine type data coming from the Yelp Fusion API. 
+
+
+
+```js
+        // geo-coding to get address of current location
+        var queryURL =
+          "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+          originLat +
+          "," +
+          originLong +
+          "&key=AIzaSyAHeXe0OoBIReOvCuEJq5cnU3LhVahYTAk";
+        $.ajax({
+          url: queryURL,
+          method: "POST",
+          dataType: "json",
+          header: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }).then(function (response) {
+          console.log(response.results[0].formatted_address);
+          // current address
+          start = response.results[0].formatted_address;
+
+          // search for food truck
+        $("#submit").on("click", function () {
+         // empyting array
+          foodTruckArray = [];
+         // removing markers
+          removeMarkers();
+
+        // search by price
+        var price = $("#1").prop("checked") ? "1," : "";
+        price += $("#2").prop("checked") ? "2," : "";
+        price += $("#3").prop("checked") ? "3," : "";
+        price += $("#4").prop("checked") ? "4," : "";
+        var textbox = $("#foodType").val();
+        price = price.substring(0, price.length - 1);
+        
+        // YELP API search
+        $.ajax({
+            url:
+            "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=foodtrucks&location=austin&limit=50&price=" +
+            price +
+            "&categories=" +
+            textbox,
+            method: "GET",
+            timeout: 0,
+            headers: {
+            Authorization:
+                "Bearer "Replaced for security purposes",
+            },
+        }).then(function (getYelpApi) {
+
+            console.log(getYelpApi);
+
+            $("#results").empty();
+            for (let i = 0; i < getYelpApi.businesses.length; i++) {
+                end =
+                getYelpApi.businesses[i].location.display_address[0] +
+                " " +
+                getYelpApi.businesses[i].location.display_address[1];
+```
