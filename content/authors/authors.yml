@@ -1,6 +1,6 @@
 - name: Marlon Mora
   bio: |
-    Currently enrolled in The University of Texas Coding Bootcamp. I have developed upwards of 25 web applications using HTML CSS JavaScript React Node MongoDB MySQL Express Bootstrap and Materialize and more using industry standard best practices in code. Participated in various projects debugging and creating a optimal project GitHub Flow organization while keeping in mind minimal viable product for production. Created applications using several API's and integrated my own data structures to be deployed on Heroku. 
+    Developed upwards of 25 web applications using HTML CSS JavaScript React Node MongoDB MySQL Express Bootstrap and Materialize and more using industry standard best practices in code. Participated in various projects debugging and creating an optimal GitHub Flow while keeping in mind minimal viable product for production and using best practices with Test-driven Development. Created applications using several API's and integrated my own data structures to be deployed on Heroku. My technical skills include but are not limited to HTML, CSS, JavaScript, Bootstrap, AJAX, ReactJS, Materialize, Heroku, GitHub, jQuery, Node, MySQL, MongoDB, Express, GitHub flow, Test-driven Development, API and Auth0.  
        
   avatar: ./avatars/Marlon.jpg
   featured: true

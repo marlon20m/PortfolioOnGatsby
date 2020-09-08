@@ -19,7 +19,7 @@ module.exports = {
       },
       {
         name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
+        url: `https://drive.google.com/file/d/1O1-uIQUx46z3xZQ_jATZ9cum3yZEKuJZ/view?usp=sharing`,
       },
     ],
   },
