@@ -19,7 +19,7 @@ module.exports = {
       },
       {
         name: `dribbble`,
-        url: `https://drive.google.com/file/d/1NoivxrkYiISkPbMwK62VzjwCFpXZHjgU/view?usp=sharing`,
+        url: `https://drive.google.com/file/d/1x1JPpQ3mnBu2h8peELWucCYBE7nqQAV7/view?usp=sharing`,
       },
     ],
   },
