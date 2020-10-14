@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "gatsby build && cp -R _redirects public/",
+    "heroku-postbuild": "gatsby build",
     "clean": "gatsby clean",
     "dev": "gatsby develop"
   },
