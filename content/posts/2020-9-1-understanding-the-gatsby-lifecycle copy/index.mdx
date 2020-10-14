@@ -7,7 +7,7 @@ excerpt: GitLit is a cocktail search application where you can find all of your 
 ---
 ## GitLit Cocktail Database
 
-[GitHub Repository](https://github.com/J-A-M-M-S/gitLit)     
+[GitHub Repository](https://github.com/J-A-M-M-S/gitLit)
 [GitLit App](https://gitlit-app.herokuapp.com/)
 
 GitLit is a cocktail search application that uses the CocktailDB API to give the user thousands of choices based on alcohol types and ingredients. After the drink is chosen the user can add the drink option to the favorites feature. The application was made using React components and React Hooks to pass all the data through. The favorites is set up using express and MongoDB as a database on MongoDB Atlas while depoloyed to Heroku. The user authentication is set up using Auth0 and connects to the favorites on the backend using React, Node, MongoDB, and Express. The API is pulled using get and post in our controllers folder. Test Automation was done using Jest, Enzyme, and the react-testing-library integrated with code climate and circle-ci to Heroku with all tests passed. React-bootstrap was used as a CSS library. 
@@ -16,7 +16,7 @@ GitLit is a cocktail search application that uses the CocktailDB API to give the
 The following code used useState and useEffect Hooks to create a template for cocktail instructions, name, and ingredients to render in the search component. 
 
 ```js
-        import React, { useState, useEffect } from "react";
+   import React, { useState, useEffect } from "react";
 import API from "../utils/api";
 import Search from "../components/Search/Search";
 import DrinkDetails from "../components/DrinkDetails/DrinkDetails";

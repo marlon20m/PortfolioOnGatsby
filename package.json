@@ -3,13 +3,13 @@
   "name": "site",
   "version": "1.0.0",
   "engines": {
-    "node": "12.18.0"
+    "node": ">=12.18.0"
   },
   "license": "MIT",
-  
   "scripts": {
     "start": "node server.js",
     "build": "gatsby build && cp -R _redirects public/",
+    "clean": "gatsby clean",
     "dev": "gatsby develop"
   },
   "dependencies": {
