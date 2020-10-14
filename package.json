@@ -7,7 +7,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "gatsby serve",
     "build": "gatsby build && cp -R _redirects public/",
     "heroku-postbuild": "gatsby build",
     "clean": "gatsby clean",
