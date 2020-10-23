@@ -1,4 +1,4 @@
-# Marlon A Mora Portfolio on Gatsby
+# Portfolio on Gatsby
           
 ## Description 
       
